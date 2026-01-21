@@ -77,22 +77,32 @@ const options = {
 </script>
 
 <template>
-  <section class="mt-5 flex flex-col gap-8">
-    <div class="grid grid-cols-2 gap-8">
-      <div class="bg-white py-5 px-10 border border-gray-300 rounded-md h-70">
+  <section class="mt-5 flex flex-col gap-4 sm:gap-6 lg:gap-8">
+    <!-- Primeira linha de gráficos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+      <div
+        class="bg-white py-4 px-5 sm:py-5 sm:px-8 lg:px-10 border border-gray-300 rounded-md h-64 sm:h-72 lg:h-80"
+      >
         <Bar :data="data" :options="options" />
       </div>
-      <div class="bg-white py-5 px-10 border border-gray-300 rounded-md h-70">
+      <div
+        class="bg-white py-4 px-5 sm:py-5 sm:px-8 lg:px-10 border border-gray-300 rounded-md h-64 sm:h-72 lg:h-80"
+      >
         <Pie :data="eventosComMaiorInscricao" :options="options" />
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-8">
-      <div class="bg-white py-5 px-10 border border-gray-300 rounded-md h-70">
+    <!-- Segunda linha de gráficos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+      <div
+        class="bg-white py-4 px-5 sm:py-5 sm:px-8 lg:px-10 border border-gray-300 rounded-md h-64 sm:h-72 lg:h-80"
+      >
         <!-- Tickets Aprovados e Rejeitado -->
         <Doughnut :data="tickets" :options="options" />
       </div>
-      <div class="bg-white py-5 px-10 border border-gray-300 rounded-md h-70">
+      <div
+        class="bg-white py-4 px-5 sm:py-5 sm:px-8 lg:px-10 border border-gray-300 rounded-md h-64 sm:h-72 lg:h-80"
+      >
         <!-- Participantes Mensalmente -->
         <Line :data="data" :options="options" />
       </div>

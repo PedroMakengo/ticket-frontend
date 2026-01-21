@@ -2,7 +2,7 @@
   <div class="p-3 sm:p-4 lg:p-6 flex flex-col gap-3 sm:gap-4 lg:gap-5 font-poppins">
     <!-- Search Input -->
     <div v-if="props.searchable" class="w-full flex flex-col">
-      <InputGroup class="py-4 sm:py-5 lg:py-7 border-2 bg-gray-50">
+      <InputGroup class="py-4 sm:py-5 lg:py-5 border-2 bg-gray-50">
         <InputGroupInput
           type="search"
           :placeholder="props.searchPlaceholder"

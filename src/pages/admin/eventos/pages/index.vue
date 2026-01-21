@@ -24,12 +24,6 @@ const handleActions = (action: any) => {};
   <section class="mt-4">
     <div class="flex justify-between">
       <Title titulo="Eventos" descricao="Gestão de todos os eventos" />
-      <button
-        class="flex gap-2 justify-center items-center bg-[#0a5a5c] rounded-md px-4 text-sm text-white"
-      >
-        <Plus />
-        Adicionar Evento
-      </button>
     </div>
     <div class="flex flex-col bg-white mt-4 rounded-md border border-gray-200">
       <DataTable

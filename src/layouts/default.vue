@@ -84,7 +84,7 @@ import { LogOut } from "lucide-vue-next";
             <img
               src="https://avatars.githubusercontent.com/u/61626420?v=4"
               class="w-10 h-10 rounded-full"
-              alt=""
+              alt="Pedro Makengo - Avatar"
             />
             <div class="flex flex-col">
               <span class="text-sm font-bold">Pedro Makengo</span>

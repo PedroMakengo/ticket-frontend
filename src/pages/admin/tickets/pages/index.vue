@@ -19,7 +19,7 @@ const handleActions = (action: any) => {};
 </script>
 
 <template>
-  <section class="px-4 sm:px-6 lg:px-0">
+  <section class="flex flex-col px-4 sm:px-6 lg:px-2 sm:py-6">
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-0">
       <Title titulo="Tickets" descricao="Gestão de todos os tickets" />
     </div>

@@ -21,7 +21,7 @@ const handleActions = (action: any) => {};
 </script>
 
 <template>
-  <section class="mt-4">
+  <section class="flex flex-col px-4 sm:px-6 lg:px-2 sm:py-6">
     <div class="flex justify-between">
       <Title titulo="Eventos" descricao="Gestão de todos os eventos" />
     </div>

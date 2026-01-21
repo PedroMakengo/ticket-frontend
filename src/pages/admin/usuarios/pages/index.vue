@@ -18,7 +18,7 @@ const handleActions = (action: any) => {};
 </script>
 
 <template>
-  <section>
+  <section class="flex flex-col px-4 sm:px-6 lg:px-2 sm:py-6">
     <div class="flex justify-between">
       <Title titulo="Usuário" descricao="Gestão de todos os usuários" />
     </div>

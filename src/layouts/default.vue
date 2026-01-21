@@ -15,7 +15,9 @@ import {
   SidebarRail,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { Home, Calendar, Ticket, Users, ChartBar, Settings } from "lucide-vue-next";
+
+import { adminMenu } from "@/utils/menu";
+import { LogOut } from "lucide-vue-next";
 </script>
 
 <template>
@@ -44,101 +46,29 @@ import { Home, Calendar, Ticket, Users, ChartBar, Settings } from "lucide-vue-ne
         <SidebarGroup>
           <SidebarGroupLabel class="text-gray-600">Painel Administrativo</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu class="py-2">
+            <SidebarMenu class="py-2" v-for="(element, index) in adminMenu" :key="index">
               <SidebarMenuItem>
                 <SidebarMenuButton
                   as-child
                   class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
                 >
-                  <a href="#">
-                    <Home />
-                    <span>Pagina Inicial</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <Users />
-                    <span>Usuários</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <Calendar />
-                    <span>Eventos</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <Users />
-                    <span>Participantes</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <Ticket />
-                    <span>Tickets</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <ChartBar />
-                    <span>Análises</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-            <SidebarMenu class="py-2">
-              <SidebarMenuItem>
-                <SidebarMenuButton
-                  as-child
-                  class="text-gray-700 hover:bg-gray-100 hover:text-[#0a5a5c]"
-                >
-                  <a href="#">
-                    <Settings />
-                    <span>Configurações</span>
-                  </a>
+                  <RouterLink :to="element.to">
+                    <!-- {{ element.icon }} -->
+                    <component :is="element.icon" />
+                    <span>{{ element.title }}</span>
+                  </RouterLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter class="bg-white" />
+      <SidebarFooter>
+        <RouterLink to="/" class="flex gap-2 py-4 text-sm items-center">
+          <LogOut />
+          <span>Terminar Sessão</span>
+        </RouterLink>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
     <SidebarInset class="bg-[#fafaf9]">

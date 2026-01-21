@@ -1,5 +1,20 @@
 <script setup lang="ts">
 import { DollarSign, Calendar, Users, Ticket } from "lucide-vue-next";
+import DataTable from "@/components/dataTable/index.vue";
+
+const headers = [
+  { label: "Nome", key: "nome" },
+  { label: "E-mail", key: "email" },
+  { label: "Perfil", key: "role" },
+  { label: "Estado", key: "activo" },
+  { label: "Data de Cadastro", key: "criadoEm" },
+];
+
+const handleRowClick = (item: any) => {
+  console.log("Linha clicada:", item);
+};
+
+const handleActions = (action: any) => {};
 </script>
 
 <template>
@@ -77,6 +92,28 @@ import { DollarSign, Calendar, Users, Ticket } from "lucide-vue-next";
           <h3 class="font-bold text-2xl">350</h3>
         </div>
       </div>
+    </div>
+
+    <div class="flex flex-col bg-white mt-4 rounded-md border border-gray-200">
+      <DataTable
+        :headers="headers"
+        :data="[]"
+        :searchable="true"
+        search-placeholder="Buscar usuários"
+        :paginate="true"
+        :items-per-page="5"
+        @row-click="handleRowClick"
+      >
+        <!-- @ts-ignore -->
+        <template #actions="{ item }">
+          <button
+            @click.stop="handleActions(item)"
+            class="p-2 text-gray-500 rounded-full hover:bg-gray-200 dark:hover:bg-white/10 cursor-pointer"
+          >
+            <Ellipsis />
+          </button>
+        </template>
+      </DataTable>
     </div>
   </section>
 </template>

@@ -12,7 +12,10 @@ const router = useRouter();
 
 const onSubmitAuthentication = async () => {
   loading.value = true;
-  router.push("/dashboard");
+
+  setTimeout(() => {
+    router.push("/dashboard");
+  }, 3000);
 };
 </script>
 
